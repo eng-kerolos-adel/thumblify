@@ -19,12 +19,7 @@ await connectDB();
 
 const app = express();
 
-app.use(
-  cors({
-    origin: ["https://thumblify-client-mu.vercel.app", "https://thumblify-server-chi.vercel.app"],
-    credentials: true,
-  }),
-);
+app.options("*", cors());
 
 app.use(
   session({
